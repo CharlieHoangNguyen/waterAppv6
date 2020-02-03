@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HomeViewController: UIViewController {
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var cup: Cup!
+    @IBOutlet weak var water: Water!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        cup.loadImage()
+        water.loadImage()
     }
 
 
