@@ -11,14 +11,14 @@ import UIKit
 
 class Water : CupOfWaterSuperClass {
     //MARK: - Cache References
-    //let userData : UserDataController = UserDataController()
+    let userData : UserDataController = UserDataController()
 
     //MARK: - Water Methods
         //LOAD IMAGE WITH DEFAULT USER VALUES
     override func loadImage() {
 
-        let percent: Double = 0.50
-        //let percent = userData.getPercentage()
+        //let percent: Double = 0.50
+        let percent = userData.getPercentage()
         
         var topLeftPoint = waterPoints[0]
         var topRightPoint = waterPoints[3]
@@ -57,29 +57,4 @@ class Water : CupOfWaterSuperClass {
         return newPoint
     }
     
-    //MARK: - Cup Methods
-    func loadCup() {
-        //Graphics Renderer
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: graphicsWidth, height: graphicsHeight))
-        
-        //Drawing the image with Points
-        let image = renderer.image { renderedImage in
-            let img = renderedImage.cgContext
-            
-            //Drawing Lines to points
-            img.move(to: cupPoints[0])
-            img.addLine(to: cupPoints[1])
-            img.addLine(to: cupPoints[2])
-            img.addLine(to: cupPoints[3])
-            
-            //Setting Width of the lines
-            img.setLineWidth(cupLineWidth)
-            img.setStrokeColor(cupLineColor)
-            
-            //Draw the path provided
-            img.strokePath()
-        }
-        
-        self.image = image
-    }
 }
