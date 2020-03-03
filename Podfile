@@ -7,4 +7,6 @@ target 'waterAppV6' do
 
   # Pods for waterAppV6
   pod 'SideMenu', '~> 6.0'
+  pod 'PickerViewKit'
+  pod 'Charts'
 end

@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-waterAppV6/Pods-waterAppV6-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/PickerViewKit/PickerViewKit.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

@@ -204,14 +204,6 @@
                                 <rect key="frame" x="82" y="318" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-z4-Dfr">
-                                <rect key="frame" x="184" y="695" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mWl-mn-oCc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -221,17 +213,16 @@
                         <outlet property="cup" destination="hVe-p0-aZZ" id="qAN-SV-Oe7"/>
                         <outlet property="water" destination="GGF-1x-OaX" id="lAO-Xg-bIo"/>
                         <outlet property="waterUnitsLabel" destination="R1n-2l-9UL" id="U9R-WQ-jGS"/>
-                        <segue destination="9FM-9q-YG2" kind="presentation" identifier="HomeToHistory" modalPresentationStyle="overCurrentContext" id="3YW-VD-Tb8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2868.115942028986" y="145.98214285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--History View Controller-->
         <scene sceneID="Djg-r0-KAb">
             <objects>
-                <viewController storyboardIdentifier="History" id="9FM-9q-YG2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="History" id="9FM-9q-YG2" customClass="HistoryViewController" customModule="waterAppV6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gNi-9e-PVm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,11 +241,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0B9-rT-Bhv" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="45" y="134" width="325" height="628"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="DAF-5q-rIK"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="5tx-ax-apu"/>
+                    <connections>
+                        <outlet property="barChartView" destination="0B9-rT-Bhv" id="JIu-I0-NQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n02-Ry-lk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,10 +423,10 @@
             </objects>
             <point key="canvasLocation" x="-2884.057971014493" y="2390.625"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="AMc-72-g6p">
             <objects>
-                <viewController id="X7S-l8-tcV" sceneMemberID="viewController">
+                <viewController id="X7S-l8-tcV" customClass="AboutViewController" customModule="waterAppV6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wFr-42-tBc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,14 +464,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc6-kI-H6a">
-                                <rect key="frame" x="372" y="385" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cb-LC-B9j">
-                                <rect key="frame" x="386" y="438" width="8" height="21"/>
+                                <rect key="frame" x="282" y="385" width="112" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -489,14 +482,25 @@
                                 <rect key="frame" x="273" y="628" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cb-LC-B9j">
+                                <rect key="frame" x="311" y="438" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WCi-Vh-H7P"/>
                     </view>
+                    <connections>
+                        <outlet property="buildNumberLabel" destination="9cb-LC-B9j" id="br1-0T-CrP"/>
+                        <outlet property="versionNumberLabel" destination="bc6-kI-H6a" id="Ogx-iA-H6r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7u6-ek-Nsa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2893" y="3180"/>
+            <point key="canvasLocation" x="-2894.202898550725" y="3179.4642857142858"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aHy-qf-XGD">
@@ -534,8 +538,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meausrement Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFc-io-zZX">
-                                <rect key="frame" x="20" y="294" width="141" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water Meausrement Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFc-io-zZX">
+                                <rect key="frame" x="20" y="294" width="191" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -548,26 +552,26 @@
                                     <action selector="changeNotifState:" destination="55k-N0-xBj" eventType="valueChanged" id="uc8-by-dZ2"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wib-1k-nk3">
-                                <rect key="frame" x="233" y="230" width="159" height="21"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3:00 PM" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvN-wg-RCI">
+                                <rect key="frame" x="297" y="223" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27s-Yt-vCd">
-                                <rect key="frame" x="233" y="294" width="161" height="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ounces" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-M0-t0t">
+                                <rect key="frame" x="297" y="287" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PE8-4I-5FU"/>
                     </view>
                     <connections>
                         <outlet property="pushNotifsSwitch" destination="DW2-XN-ib9" id="3YA-Fg-aCh"/>
+                        <outlet property="reminderTimeTextField" destination="UvN-wg-RCI" id="fOn-5g-TD0"/>
+                        <outlet property="waterMeasurementTextField" destination="6gY-M0-t0t" id="GvQ-Pb-f7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JA0-db-dkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -581,7 +585,6 @@
         <image name="sun.max.fill" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YbH-nv-nHR"/>
-        <segue reference="xPc-Jy-G61"/>
+        <segue reference="Ghz-k9-lKb"/>
     </inferredMetricsTieBreakers>
 </document>

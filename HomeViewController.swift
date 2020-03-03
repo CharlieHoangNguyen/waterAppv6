@@ -24,9 +24,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        testFuncToDelete()
+        //testFuncToDelete()
         loadCup()
         loadWater()
+        loadText()
     }
     
     //MARK: - IBActions
@@ -37,10 +38,6 @@ class HomeViewController: UIViewController {
     func testFuncToDelete() {
         userData.setTotalWater()
         userData.resetCurrentWater()
-    }
-    
-    @IBAction func buttonTest(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "HomeToHistory", sender: self)
     }
 }
 
@@ -108,13 +105,4 @@ extension HomeViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-}
-
-//MARK: - Segues
-extension HomeViewController {
-    
-    func goToHistoryView() {
-        self.performSegue(withIdentifier: "HomeToHistory", sender: self)
-    }
-    
 }

@@ -20,6 +20,8 @@ struct UserDataController {
     let userAvatar : String = "User Avatar"
     let birthdayString : String = "User Birthday"
     let pushNotifsString : String = "User Notifications"
+    let remindertimeString : String = "User Reminder Time"
+    let waterMeasurementString : String = "User WaterMeasurement"
     
     let defaults = UserDefaults.standard
 }
@@ -135,6 +137,14 @@ extension UserDataController {
     func getBirthday() -> Date {
         return defaults.object(forKey: birthdayString) as! Date
     }
+    
+    func setRemindertime(time: Date) {
+        defaults.set(time, forKey: remindertimeString)
+    }
+    
+    func getReminderTime() -> Date {
+        return defaults.object(forKey: remindertimeString) as! Date
+    }
 }
 
 //MARK: - Push Notificaions Methods
@@ -145,5 +155,16 @@ extension UserDataController {
     
     func getCurrentPushNotifState() -> Bool {
         return defaults.bool(forKey: pushNotifsString)
+    }
+}
+
+//MARK: - User Water Measurement
+extension UserDataController {
+    func setWaterMeasurement(measurement: String) {
+        defaults.set(measurement, forKey: waterMeasurementString)
+    }
+    
+    func getWaterMeasurement() -> String {
+        return defaults.string(forKey: waterMeasurementString) ?? ""
     }
 }
