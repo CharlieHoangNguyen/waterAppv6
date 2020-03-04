@@ -22,6 +22,7 @@ struct UserDataController {
     let pushNotifsString : String = "User Notifications"
     let remindertimeString : String = "User Reminder Time"
     let waterMeasurementString : String = "User WaterMeasurement"
+    let userWeeklyHistoryString: String = "User History"
     
     let defaults = UserDefaults.standard
 }
@@ -166,5 +167,23 @@ extension UserDataController {
     
     func getWaterMeasurement() -> String {
         return defaults.string(forKey: waterMeasurementString) ?? ""
+    }
+}
+
+//MARK: - User History
+extension UserDataController {
+    func getUserHistory() -> [String: Int]? {
+        return defaults.object(forKey: userWeeklyHistoryString) as? [String : Int]
+    }
+    
+    func setUserHistory(date: String, value: Int) {
+        if var userHistoryArray = getUserHistory() {
+            
+            if userHistoryArray.count == 7 {
+                userHistoryArray.remove(at: userHistoryArray.startIndex)
+            }
+            userHistoryArray[date] = value
+            defaults.set(userHistoryArray, forKey: userWeeklyHistoryString)
+        }
     }
 }

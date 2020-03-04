@@ -1,4 +1,7 @@
 PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
@@ -6,6 +9,7 @@ PODS:
   - SideMenu (6.4.7)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon.git`, branch `swift5`)
   - Charts
   - PickerViewKit
   - SideMenu (~> 6.0)
@@ -16,11 +20,22 @@ SPEC REPOS:
     - PickerViewKit
     - SideMenu
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift5
+    :git: https://github.com/wowansm/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 96d52c36a45847fff60bcff7a58fec1e4bd7390b
+    :git: https://github.com/wowansm/Chameleon.git
+
 SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   PickerViewKit: 86b90e2e2e1b0ed9baf867c65aab2d12a7a59f28
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: ad6c8fa669ff3af8de00ca1be4ac05500d355cd9
+PODFILE CHECKSUM: c126bafa033d0628e42f8a23d6107cb08c96f5a6
 
 COCOAPODS: 1.8.4

@@ -54,6 +54,6 @@ extension HistoryViewController {
     
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.valueFormatter = DateValueFormatter()
-        barChartView.xAxis.labelFont = .systemFont(ofSize: 12)
+        barChartView.xAxis.labelFont = .systemFont(ofSize: 9)
     }
 }

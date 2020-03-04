@@ -90,6 +90,15 @@ extension HomeViewController {
             
             if let waterAmount = Int(textField.text!) {
                 self.updateWater(amountDrank: waterAmount)
+                
+                //Get Current Date in String
+                let today = Date()
+                let dateFormat = DateFormatter()
+                dateFormat.dateFormat = "MMM dd"
+                let todayString = dateFormat.string(from: today)
+                
+                //Get History Array and Append
+                self.userData.setUserHistory(date: todayString, value: waterAmount)
             }
         }
         

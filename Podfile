@@ -9,4 +9,6 @@ target 'waterAppV6' do
   pod 'SideMenu', '~> 6.0'
   pod 'PickerViewKit'
   pod 'Charts'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git', :branch => 'swift5'
+
 end
